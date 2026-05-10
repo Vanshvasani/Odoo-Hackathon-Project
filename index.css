@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== LIGHT THEME (default) ===== */
+:root {
+  --sand: #F5F0E8;
+  --sand-dark: #EDE6D6;
+  --ink: #1A1814;
+  --ink-soft: #3D3830;
+  --ink-muted: #7A7265;
+  --terracotta: #C9623F;
+  --terracotta-light: #E8C4B4;
+  --terracotta-pale: #FDF0EA;
+  --sage: #4A7C59;
+  --sage-light: #C8DDD0;
+  --sage-pale: #EEF5F1;
+  --gold: #D4A847;
+  --gold-pale: #FBF4E3;
+  --sky: #3B6FA0;
+  --sky-pale: #EBF1F8;
+  --danger: #C0392B;
+  --bg: #F5F0E8;
+  --surface: #FFFEF9;
+  --surface-2: #EDE6D6;
+  --border: rgba(26,24,20,0.12);
+  --border-strong: rgba(26,24,20,0.25);
+  --text-primary: #1A1814;
+  --text-secondary: #3D3830;
+  --text-muted: #7A7265;
+  --sidebar-bg: #1A1814;
+  --header-bg: #FFFEF9;
+  --shadow-sm: 0 1px 3px rgba(26,24,20,0.08);
+  --shadow: 0 4px 16px rgba(26,24,20,0.10);
+  --shadow-lg: 0 12px 40px rgba(26,24,20,0.14);
+}
+
+/* ===== DARK THEME ===== */
+[data-theme="dark"] {
+  --sand: #2A2520;
+  --sand-dark: #1E1B17;
+  --ink: #F0EBE3;
+  --ink-soft: #D4CBBD;
+  --ink-muted: #8A8070;
+  --terracotta-pale: #2D1A12;
+  --sage-pale: #111E15;
+  --gold-pale: #1E1A0A;
+  --sky-pale: #0D1B2A;
+  --bg: #16130F;
+  --surface: #1E1B17;
+  --surface-2: #2A2520;
+  --border: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.18);
+  --text-primary: #F0EBE3;
+  --text-secondary: #D4CBBD;
+  --text-muted: #8A8070;
+  --sidebar-bg: #0F0D0A;
+  --header-bg: #1E1B17;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow: 0 4px 16px rgba(0,0,0,0.35);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 15px; scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background 0.25s, color 0.25s;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-fade-in { animation: fadeInUp 0.25s ease; }
+.font-display { font-family: 'Playfair Display', Georgia, serif; }
